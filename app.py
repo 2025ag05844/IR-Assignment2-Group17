@@ -350,10 +350,10 @@ st.sidebar.header("Data and preprocessing")
 uploaded_file = st.sidebar.file_uploader(
     "Upload a CSV dataset (optional)",
     type=["csv"],
-    help="If no file is uploaded, the app tries data/bbc_news.csv.",
+    help="If no file is uploaded, the app tries bbc_news.csv.",
 )
 
-default_path = "data/bbc_news.csv"
+default_path = "bbc_news.csv"
 try:
     if uploaded_file is not None:
         raw_df = pd.read_csv(uploaded_file)
@@ -363,7 +363,7 @@ try:
         data_source = default_path
 except FileNotFoundError:
     st.error(
-        "Dataset not found. Put your CSV at data/bbc_news.csv, "
+        "Dataset not found. Put your CSV at bbc_news.csv, "
         "or upload it using the sidebar."
     )
     st.stop()
